@@ -1,6 +1,6 @@
-# My Spring Boot Application
+# DevOps Example Application
 
-Welcome to My Spring Boot Application! This is a sample project showcasing how to containerize a Spring Boot application using Docker, integrate it with Jenkins for continuous integration, and push the Docker image to DockerHub.
+Welcome to My Spring Boot DevOps Example Application! This is a sample project showcasing how to containerize a Spring Boot application using Docker, integrate it with Jenkins for continuous integration, and push the Docker image to DockerHub.
 
 ## Prerequisites
 
@@ -17,8 +17,8 @@ Follow these steps to set up the project and run it locally:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-username/my-spring-app.git
-   cd my-spring-app
+   git clone https://github.com/your-username/devops.git
+   cd devops
 
    ```
 
