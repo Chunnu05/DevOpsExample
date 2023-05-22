@@ -10,6 +10,16 @@ Before getting started, ensure that you have the following prerequisites install
 - Docker
 - Jenkins
 
+## Project Structure
+
+The project consists of the following files and directories:
+
+- src/: Contains the source code for the Spring Boot application.
+- pom.xml: Maven project configuration file.
+- Dockerfile: Dockerfile for building the Docker image.
+- docker-compose.yml: Docker Compose file for running the application locally.
+- Jenkinsfile: Jenkinsfile for automating the build and deployment process.
+
 ## Getting Started
 
 Follow these steps to set up the project and run it locally:
