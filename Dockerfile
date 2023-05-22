@@ -1,18 +1,25 @@
-FROM maven:3.8.1-jdk-11 AS build
-
+# Stage 1: Build the application
+FROM maven:3.8.1-openjdk-17-slim AS build
 WORKDIR /app
 
-COPY ./src ./src
-COPY ./pom.xml ./pom.xml
-COPY ./mvnw ./mvnw
-COPY ./mvnw.cmd ./mvnw.cmd
+# Copy the Maven project files
+COPY pom.xml .
 
-RUN mvn clean install
+# Download the Maven dependencies
+RUN mvn dependency:go-offline -B
 
-FROM openjdk:11-jre-slim
+# Copy the application source code
+COPY src ./src
 
+# Build the application
+RUN mvn clean package -DskipTests
+
+# Stage 2: Create the Docker image
+FROM openjdk:17-jdk-slim
 WORKDIR /app
 
-COPY --from=build /app/target/devops.jar app/
+# Copy the built JAR file from the build stage
+COPY --from=build /app/target/devops.jar app.jar
 
-ENTRYPOINT exec java $JAVA_OPTS -jar app/devops.jar
+# Set the entry point to run the application
+ENTRYPOINT ["java", "-jar", "app.jar"]
