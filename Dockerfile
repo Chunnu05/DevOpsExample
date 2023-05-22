@@ -19,7 +19,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the built JAR file from the build stage
-COPY --from=build /app/target/devops.jar app.jar
+COPY --from=build /app/target/devops-0.0.1-SNAPSHOT.jar app.jar
 
 # Set the entry point to run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
