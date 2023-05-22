@@ -3,7 +3,6 @@ FROM maven:3.8.1-jdk-11 AS build
 WORKDIR /app
 
 COPY ./src ./src
-COPY ./.mvn ./.mvn
 COPY ./pom.xml ./pom.xml
 COPY ./mvnw ./mvnw
 COPY ./mvnw.cmd ./mvnw.cmd
