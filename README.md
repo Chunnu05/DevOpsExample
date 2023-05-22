@@ -46,34 +46,35 @@ The application will be accessible at http://localhost:8080.
 
 This project includes a Jenkinsfile that automates the build and deployment process using Jenkins. To integrate with Jenkins and push the Docker image to DockerHub, follow these steps:
 
-Install and set up Jenkins with the necessary plugins and dependencies.
+1. Install and set up Jenkins with the necessary plugins and dependencies.
 
-Create a new Jenkins pipeline job.
+2. Create a new Jenkins pipeline job.
 
-Configure the job to use your version control system and specify the repository URL.
+3. Configure the job to use your version control system and specify the repository URL.
 
-In the job configuration, add your DockerHub credentials as Username and Password credentials with the IDs DOCKERHUB_USERNAME and DOCKERHUB_PASSWORD, respectively.
+4. In the job configuration, add your DockerHub credentials as Username and Password credentials with the IDs DOCKERHUB_USERNAME and DOCKERHUB_PASSWORD, respectively.
 
-In the pipeline configuration, select "Pipeline script from SCM" and provide the path to your Jenkinsfile.
+5. In the pipeline configuration, select "Pipeline script from SCM" and provide the path to your Jenkinsfile.
 
-Save the job configuration.
+6. Save the job configuration.
 
-Run the Jenkins pipeline, which will build the Docker image and push it to DockerHub.
+7. Run the Jenkins pipeline, which will build the Docker image and push it to DockerHub.
 
 ## Deploying to DockerHub
 
 To deploy the Docker image to DockerHub, follow these steps:
 
-Create a DockerHub account if you don't have one.
+1. Create a DockerHub account if you don't have one.
 
-Modify the Jenkinsfile with your DockerHub username:
+2. Modify the Jenkinsfile with your DockerHub username:
 
-Replace <your-dockerhub-username> in the Jenkinsfile with your DockerHub username.
-Update the Jenkins job configuration with the appropriate DockerHub credentials.
+3. Replace <your-dockerhub-username> in the Jenkinsfile with your DockerHub username.
 
-Run the Jenkins pipeline, and it will build the Docker image, login to DockerHub, and push the image to your DockerHub repository.
+4. Update the Jenkins job configuration with the appropriate DockerHub credentials.
 
-Once the image is pushed to DockerHub, you can pull and run it on any Docker-compatible environment.
+5. Run the Jenkins pipeline, and it will build the Docker image, login to DockerHub, and push the image to your DockerHub repository.
+
+6. Once the image is pushed to DockerHub, you can pull and run it on any Docker-compatible environment.
 
 ## Contributing
 
