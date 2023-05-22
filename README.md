@@ -17,7 +17,7 @@ Follow these steps to set up the project and run it locally:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-username/devops.git
+   git clone https://github.com/Chunnu05/DevOpsExample.git
    cd devops
 
    ```
