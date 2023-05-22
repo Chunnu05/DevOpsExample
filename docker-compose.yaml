@@ -1,10 +1,9 @@
-# docker-compose.yml
 version: '3'
 
 services:
-  my-spring-app:
+  devops:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: .  # The build context is the current directory
+      dockerfile: Dockerfile  # Specifies the Dockerfile to use for building the service
     ports:
-      - 8080:8080
+      - 8080:8080  # Maps port 8080 of the container to port 8080 of the host machine
