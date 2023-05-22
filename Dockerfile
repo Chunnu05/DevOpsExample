@@ -1,12 +1,19 @@
-# Dockerfile
-FROM adoptopenjdk:11-jdk-hotspot
+FROM maven:3.8.1-jdk-11 AS build
 
 WORKDIR /app
 
-RUN ls -la ./target
+COPY ./src ./src
+COPY ./.mvn ./.mvn
+COPY ./pom.xml ./pom.xml
+COPY ./mvnw ./mvnw
+COPY ./mvnw.cmd ./mvnw.cmd
 
-COPY ./target/devops.jar ./app.jar
+RUN mvn clean install
 
-EXPOSE 8080
+FROM openjdk:11-jre-slim
 
-CMD ["java", "-jar", "app.jar"]
+WORKDIR /app
+
+COPY --from=build /app/target/devops.jar app/
+
+ENTRYPOINT exec java $JAVA_OPTS -jar app/devops.jar
