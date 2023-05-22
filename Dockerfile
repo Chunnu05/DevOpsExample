@@ -9,7 +9,7 @@ COPY ./mvnw.cmd ./mvnw.cmd
 
 RUN mvn clean install
 
-FROM openjdk:11-jre-slim
+FROM openjdk:17-jre-slim
 
 WORKDIR /app
 
